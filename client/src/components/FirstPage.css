@@ -1,0 +1,168 @@
+/* Table container */
+.table-container {
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	margin-top: 1rem;
+	background-color: #fff;
+	height: 50vh;
+}
+
+/* Custom table styles */
+.custom-table {
+	font-size: 16px;
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+	width: 90%;
+	height: 50%;
+	/* max-width: 800px; */
+	margin: 0 auto;
+}
+
+/* Table header */
+.custom-table th {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	/* background-color: #ffffff; */
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* Table data rows */
+.custom-table td {
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	font-size: 16px;
+}
+
+/* Highlighted header row */
+.custom-table th[colspan="8"] {
+	background-color: #ffffff;
+	font-size: 16px;
+}
+
+/* Highlighted data rows */
+.custom-table tr:nth-child(5) td,
+.custom-table tr:nth-child(6) td {
+	background-color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* Marks row */
+.custom-table tr:nth-child(8) td {
+	background-color: #ffffff;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/* SPI and Semester rows */
+.custom-table tr:nth-child(7) td {
+	background-color: #ffffff;
+	font-weight: bold;
+        font-size: 16px;
+}
+.firstpage-container {
+	height: 100vh;
+	/* border: 2px solid black; */
+	background-color: #fff;
+        font-size: 16px;
+}
+.header {
+	/* border: 2px solid black; */
+	display: flex !important;
+	/* flex-direction: column; */
+	align-items: center;
+	font-weight: 400;
+    font-size: 16px;
+}
+.logo{
+    width: 10rem;
+     padding: 0;
+     margin: 0 ;
+}
+/* edit this */
+@media (max-width: 768px) { 
+	.firstpage-container > .header {
+        margin-top: -2rem;
+		font-size: 14px;
+	}
+	.table-container {
+		font-size: 14px !important;
+		width: 100vw;
+		height: 20%;
+        font-size: 14px;
+	}
+    .custom-table tr{
+        /* border: 2px solid black; */
+        font-size: 10px !important;
+    }
+    .logo{
+        width: 5rem;
+    }
+    .header > div{
+        font-size: 12px !important;
+    }
+    .contactDetails,
+	.transcriptDetails,
+	.transcriptName,
+	.collegProgram,
+	.details {
+        font-size: 8px;
+	}
+    .contactDetails{
+        margin-top: -1rem;
+    }
+    .transcriptName{
+        margin-top: -1rem;
+    }
+    /* edit here */
+}
+.contactDetails {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	justify-content: space-between;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	padding-left: 1rem;
+	padding-right: 1rem;
+    font-size: 16px;
+}
+.transcriptDetails {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	font-size: 16px;
+	justify-content: space-around;
+    
+}
+.transcriptName {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	justify-content: center;
+	font-size: 24px;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+.collegProgram {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	margin-top: 1rem;
+	justify-content: center;
+	font-weight: bold;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+    font-size: 16px;
+}
+.details {
+	height: 30rem;
+        font-size: 16px;
+}

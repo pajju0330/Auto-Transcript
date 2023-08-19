@@ -1,0 +1,70 @@
+.transcriptMain {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #edf4fc;
+}
+
+.transcrpit {
+  width: 40vw;
+  border: 2px solid rgb(116, 116, 116);
+}
+.continueasguest {
+  text-decoration: none;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+  width: 20rem;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: white;
+  background-image: linear-gradient(to right, #1f12d6, #0062ff, #1f12d6);
+  transition: all 0.2s;
+}
+
+.continueasguest:hover {
+  cursor: pointer;
+  color: whitesmoke;
+  box-shadow: 2px 2px 2px 2px #b5b4b4;
+}
+.cont {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 40vw;
+  display: flex;
+  justify-content: space-between;
+}
+.submitbtn1 {
+  font-size: 1.3rem;
+  width: 18rem;
+  text-align: center;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #18c70f, #16d805, #18c70f);
+  transition: all 0.2s;
+}
+.submitbtn2 {
+  font-size: 1.3rem;
+  width: 18rem;
+  text-align: center;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: white;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #ff0000, #ff3636, #ff0000);
+  transition: all 0.2s;
+}

@@ -1,0 +1,19 @@
+#logo {
+  width: 10rem;
+  padding-top: 1.5rem;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  /* border: 2px solid black; */
+}
+
+.container {
+  background-color: #edf4fc;
+  padding-bottom: 1rem;
+}
