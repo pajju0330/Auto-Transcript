@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
 const courseStructureSchema = new mongoose.Schema({
-    coursecode:{
+    CourseCode:{
         type:String
     },
-    courseTitle:{
+    CourseTitle:{
         type:String
     },
     Lectures:{
@@ -16,13 +16,13 @@ const courseStructureSchema = new mongoose.Schema({
     Practical:{
         type:String
     },
-    credits:{
+    Credits:{
         type:String
     },
     grade:{
         type:String
     },
-    year:{
+    Year:{
         type:String
     }
 })

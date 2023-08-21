@@ -1,8 +1,8 @@
-const Course = require('../models/CourseStructure');l
+const Course = require('../models/CourseStructure');
 
 const insertManyCourses = async (req, res) => {
     const coursesArray = req.body; 
-
+    console.log(coursesArray);
     try {
         const insertedCourses = await Course.insertMany(coursesArray);
         res.status(201).json({ message: 'Courses inserted successfully', courses: insertedCourses });
