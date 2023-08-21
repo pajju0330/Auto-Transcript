@@ -23,7 +23,7 @@ const courseStructureSchema = new mongoose.Schema({
         type:String
     },
     year:{
-
+        type:String
     }
 })
 
