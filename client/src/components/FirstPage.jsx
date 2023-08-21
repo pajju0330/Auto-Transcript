@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FirstPage.css"; // You can create a CSS file for styling
 import wcelogo from "./wcelogo.png";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import { useParams } from "react-router-dom";
+import * as API from "../API/FormRequest";
+import { useNavigate } from "react-router-dom";
 
-function FirstPage({ name, prn, POS, completion, language, result, marks }) {
-	name = "John Doe";
-	prn = "123456789";
-	POS = "2020 - 2024";
-	completion = "May 2024";
+function FirstPage({ language, result, marks }) {
+	const navigate = useNavigate();
+	const { id } = useParams();
+	const [name, setName] = React.useState("");
+	const [prn, setPrn] = React.useState("");
+	const [POS, setPOS] = React.useState("");
+	const [completion, setCompletion] = React.useState("");
+
+	const getApplicant = async () => {
+		try {
+			const data = { _id: id };
+			const res = await API.getSingleApplicant(data);
+			setName(`${res.data.applicant.firstName} ${res.data.applicant.lastName}`);
+			setPrn(res.data.applicant.prn);
+			setPOS(`${res.data.applicant.yos - 4}-${res.data.applicant.yos}`);
+			setCompletion(`May 	${res.data.applicant.yos}`);
+		} catch (err) {
+			console.error(err.message);
+		}
+	};
+	useEffect(() => {
+		getApplicant();
+	}, []);
+
 	language = "English";
 	result = "Pass";
 	marks = [8.5, 8.7, 9.0, 8.8, 8.2, 8.6, 8.9, 8.4];
@@ -29,11 +51,7 @@ function FirstPage({ name, prn, POS, completion, language, result, marks }) {
 				}}>
 				<div>
 					{" "}
-					<img
-						src={wcelogo}
-						className="logo"
-						alt=''
-					/>
+					<img src={wcelogo} className='logo' alt='' />
 				</div>
 				<div
 					style={{
@@ -82,21 +100,33 @@ function FirstPage({ name, prn, POS, completion, language, result, marks }) {
 					<tbody>
 						<tr>
 							<td colSpan='2'>Name of student</td>
-							<td colSpan='2'>{name}</td>
+							<td colSpan='2' contenteditable='true'>
+								{name}
+							</td>
 							<td colSpan='2'>PRN</td>
-							<td colSpan='2'>{prn}</td>
+							<td colSpan='2' contenteditable='true'>
+								{prn}
+							</td>
 						</tr>
 						<tr>
 							<td colSpan='2'>Period of Study</td>
-							<td colSpan='2'>{POS}</td>
+							<td colSpan='2' contenteditable='true'>
+								{POS}
+							</td>
 							<td colSpan='2'>Month And Year of Completion</td>
-							<td colSpan='2'>{completion}</td>
+							<td colSpan='2' contenteditable='true'>
+								{completion}
+							</td>
 						</tr>
 						<tr>
 							<td colSpan='2'>Medium of Instruction</td>
-							<td colSpan='2'>{language}</td>
+							<td colSpan='2' contenteditable='true'>
+								{language}
+							</td>
 							<td colSpan='2'>Result</td>
-							<td colSpan='2'>{result}</td>
+							<td colSpan='2' contenteditable='true'>
+								{result}
+							</td>
 						</tr>
 						<tr>
 							<td colSpan={2}>First Year</td>
@@ -115,18 +145,20 @@ function FirstPage({ name, prn, POS, completion, language, result, marks }) {
 							<td>Sem-II</td>
 						</tr>
 						<tr>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
-							<td>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
+							<td contenteditable='true'>SPI</td>
 						</tr>
 						<tr>
 							{marks.map((mark, index) => (
-								<td key={index}>{mark}</td>
+								<td contenteditable='true' key={index}>
+									{mark}
+								</td>
 							))}
 						</tr>
 						<tr>
@@ -165,6 +197,27 @@ function FirstPage({ name, prn, POS, completion, language, result, marks }) {
 						</tr>
 					</tbody>
 				</table>
+			</div>
+			<div
+				style={{
+					backgroundColor: "white",
+					display: "flex",
+					justifyContent: "flex-end",
+				}}>
+				<button
+					style={{
+						width: "10rem",
+						height: "2rem",
+						marginBottom: "1rem",
+						marginRight: "1rem",
+						backgroundColor: "#333",
+						color: "white",
+						cursor: "pointer",
+					}}
+					onClick={() => navigate(`/admin/transcript/secondpage/${id}`)}
+					className='next-btn'>
+					Next
+				</button>
 			</div>
 		</div>
 	);

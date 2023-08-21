@@ -7,6 +7,8 @@ import Login from './components/Login'
 import Procedure from './components/Procedure'
 import AdminHome from './components/AdminHome'
 import FirstPage from './components/FirstPage'
+import AddData from './components/AddData'
+import ShowTranscript from './components/ShowTranscript'
 
 
 const App = () => {
@@ -20,7 +22,9 @@ const App = () => {
           element={role === 'admin' ? <Navigate to='/admin/home' /> : <Procedure />}
         />
         <Route exact path='/admin/login' element={<Login />} />
-        <Route exact path='/admin/transcript/firstpage' element={<FirstPage />} />
+        <Route exact path='/admin/transcript/firstpage/:id' element={<FirstPage />} />
+        <Route exact path='/admin/transcript/secondpage/:id' element={<ShowTranscript />} />
+        <Route exact path='/admin/home/adddata' element={<AddData/>} />
         <Route exact path='/form' element={<Checkout />} />
         <Route exact path='/procedure' element={<Procedure />} />
         <Route

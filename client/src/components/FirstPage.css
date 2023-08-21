@@ -6,7 +6,7 @@
 	/* align-items: center; */
 	margin-top: 1rem;
 	background-color: #fff;
-	height: 50vh;
+	height: 80vh;
 }
 
 /* Custom table styles */
@@ -119,6 +119,10 @@
     .transcriptName{
         margin-top: -1rem;
     }
+	.next-btn{
+		opacity: 0;
+		/* display: none; */
+	}
     /* edit here */
 }
 .contactDetails {

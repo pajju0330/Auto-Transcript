@@ -1,20 +1,18 @@
 import * as React from 'react';
-import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import DoNotDisturbOnIcon from '@mui/icons-material/DoNotDisturbOn';
 import Appbar from './Utils/Appbar';
 import './AdminHome.css';
 import * as API from '../API/FormRequest';
-import * as XLSX from 'xlsx';
+import {useNavigate} from 'react-router-dom'
 import ShowTranscript from './ShowTranscript';
 
-function AdminHome() {
+function AdminHome() {  
   const [applicants, setApplicants] = React.useState([]);
   const [fileUpload, setFileupload] = React.useState();
   const [jsonData, setJsonData] = React.useState([]);
   const [clickedId, setClickedId] = React.useState(null);
   const [geneTranscript, setGeneTranscript] = React.useState(false);
   const [singleApplicant, setSingleApplicant] = React.useState(null); // [0] for single applicant
-
+  const navigate = useNavigate();
 
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
@@ -38,9 +36,6 @@ function AdminHome() {
     fetch();
   }, []);
 
-  React.useEffect(() => {
-    console.log(jsonData);
-  });
 
   var count = 0;
   
@@ -80,16 +75,16 @@ function AdminHome() {
                   <div className='subtitle sub-one'>Sr. No. </div>
                   <div className='subtitle sub-one'>PRN </div>
                   <div className='subtitle sub-two'>Name</div>
-                  <div className='subtitle sub-three'>Branch</div>
-                  <div className='subtitle sub-three'>Year of Study</div>
-                  <div className='subtitle sub-three'>Verification</div>
-                  <div className='subtitle sub-three'>Status</div>
+                  <div className='subtitle sub-one'>Branch</div>
+                  <div className='subtitle sub-one'>Year of Study</div>
+                  <div className='subtitle sub-one'>Verification</div>
+                  <div className='subtitle sub-one'>Status</div>
                 </div>
                 {applicants.map((applicant) => {
                   return (
                     <div
                       className='home-content'
-                      onClick={() => generateTranscript(applicant._id)}
+                      onClick={() => navigate(`/admin/transcript/firstpage/${applicant._id}`)}
                     >
                       <div className='subtitle sub-one'>{++count} </div>
                       <div className='subtitle sub-one'>{applicant.prn} </div>

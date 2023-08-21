@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import DocViewer, { DocViewerRenderers } from '@cyntler/react-doc-viewer';
 import * as api from '../API/FormRequest'
+import { useParams } from "react-router-dom";
+import * as API from "../API/FormRequest";
 
-const ShowTranscript = ({ applicant,  setGeneTranscript }) => {
-  // Extracting URLs from the candidateName.ReportDetails object
-  const pdfUrls = applicant.ReportDetails.map(report => report.imageURL);
+const ShowTranscript = () => {
+  const { id } = useParams();
+  const [applicant, setApplicant] = useState({});
+  const getApplicant = async () => {
+		try {
+			const data = { _id: id };
+			const res = await API.getSingleApplicant(data);
+      console.log(res.data.applicant);
+      console.log("hellllooo");
+      setApplicant(res.data.applicant);
+		} catch (err) {
+      console.log("heelo");
+      console.error(err.message);
+		}
+	};
+  useEffect(()=>{
+    console.log("gello");
+    getApplicant();
+  },[])
+  const pdfUrls = applicant?.ReportDetails?.map(report => report.imageURL) || [];
   const updateStatus = async (status) => {
     applicant.status = status
     const data = {
@@ -12,7 +31,6 @@ const ShowTranscript = ({ applicant,  setGeneTranscript }) => {
       status
     }
     const res = await api.updateApplicantStatus(data);
-    console.log(res.data);
   }
 
   return (
@@ -25,7 +43,6 @@ const ShowTranscript = ({ applicant,  setGeneTranscript }) => {
         <button
           onClick={() => {
             updateStatus('Verified')
-            setGeneTranscript(false);
           }}
           className='submitbtn1'
         >
@@ -34,7 +51,6 @@ const ShowTranscript = ({ applicant,  setGeneTranscript }) => {
         <button
           onClick={() => {
             updateStatus('Rejected')
-            setGeneTranscript(false);
           }}
           className='submitbtn2'
         >

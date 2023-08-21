@@ -49,7 +49,7 @@ const createTranscript = catchAsync(async (req, res) => {
 
 const getSingleApplicant = catchAsync(async (req,res) =>{
     const _id = req.body._id;
-    const applicant = Applicant.findOne({_id});
+    const applicant = await Applicant.findOne({_id});
     if(!applicant){
       return res.status(404).json({message:"No applicant found"});
     }
