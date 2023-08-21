@@ -1,0 +1,224 @@
+/* Table container */
+
+second-page-table-container {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 1rem;
+    background-color: #fff;
+    height: 80vh;
+}
+
+/* Custom table styles */
+.second-page-custom-table {
+
+    font-size: 16px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    width: 90%;
+    height: 50%;
+    /* max-width: 800px; */
+    margin: 0 auto;
+}
+
+/* Table header */
+.second-page-custom-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    /* background-color: #ffffff; */
+    /* font-weight: bold; */
+    font-size: 16px;
+}
+
+/* Table data rows */
+.second-page-custom-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Highlighted header row */
+.second-page-custom-table th[colspan="8"] {
+    background-color: #ffffff;
+    font-size: 16px;
+}
+
+/* Highlighted data rows */
+.second-page-custom-table tr td {
+    background-color: #ffffff;
+    /* font-weight: bold; */
+    font-size: 16px;
+}
+
+
+
+.second-page-container {
+    height: 100vh;
+    /* border: 2px solid black; */
+    background-color: #fff;
+    font-size: 16px;
+}
+
+.second-page-header {
+    /* border: 2px solid black; */
+    display: flex !important;
+    /* flex-direction: column; */
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.second-page-logo {
+    width: 10rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* edit this */
+@media (max-width: 768px) {
+    .second-page-container>.second-page-header {
+        margin-top: -2rem;
+        font-size: 14px;
+    }
+
+    .second-page-table-container {
+        font-size: 14px !important;
+        width: 100vw;
+        height: 20%;
+        font-size: 14px;
+    }
+
+    .second-page-custom-table tr {
+        /* border: 2px solid black; */
+        font-size: 10px !important;
+    }
+
+    .second-page-logo {
+        width: 5rem;
+    }
+
+    .second-page-header>div {
+        font-size: 12px !important;
+    }
+
+    .second-page-contactDetails,
+    .second-page-transcriptDetails,
+    .second-page-transcriptName,
+    .second-page-collegProgram,
+    .second-page-details {
+        font-size: 8px;
+    }
+
+    .second-page-contactDetails {
+        margin-top: -1rem;
+    }
+
+    .second-page-transcriptName {
+        margin-top: -1rem;
+    }
+
+    .second-page-next-btn {
+        opacity: 0;
+        /* display: none; */
+    }
+
+    /* edit here */
+}
+
+.second-page-contactDetails {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 16px;
+}
+
+.second-page-transcriptDetails {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: space-around;
+
+}
+
+.second-page-transcriptName {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.second-page-collegProgram {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: center;
+    font-weight: bold;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    font-size: 16px;
+}
+
+.second-page-details {
+    height: 30rem;
+    font-size: 16px;
+}
+.second-page-main {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    font-size: small;
+    line-height: 0.4rem;
+    height: 0%;
+}
+
+.second-page-table {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: small;
+    height: fit-content;
+    border-collapse: collapse;
+}
+
+.second-page-title {
+    width: 30%
+}
+
+.second-page-text {
+    text-align: right;
+    font-size: small;
+}
+
+.second-page-para {
+    margin-top: 0%;
+    font-size: small;
+}
+
+.second-page-table2 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    font-size: small;
+    height: fit-content;
+    border-collapse: collapse;
+}
+
+
