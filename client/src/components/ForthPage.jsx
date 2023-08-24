@@ -4,13 +4,14 @@ import * as API from "../API/courseRequest";
 import * as FAPI from "../API/FormRequest";
 import { useParams } from "react-router-dom";
 
-const SecondPage = () => {
+const ForthPage = () => {
 	const [courseDetails, setCourseDetails] = useState([]);
 	const { id } = useParams();
 	const [name, setName] = React.useState("");
 	const [prn, setPrn] = React.useState("");
 	const [POS, setPOS] = React.useState("");
 	const [completion, setCompletion] = React.useState("");
+	const next = "fifthpage";
 	const getCourseDetails = async () => {
 		try {
 			const res = await API.getAllCourses();
@@ -36,7 +37,7 @@ const SecondPage = () => {
 		getCourseDetails();
 		getApplicant();
 	}, []);
-	const next = "thirdpage";
+
 	return (
 		<div>
 			{courseDetails.length > 0 ? (
@@ -47,7 +48,7 @@ const SecondPage = () => {
 					POS={POS}
 					completion={completion}
 					next={next}
-					Y={"1"}
+                    Y={"1"}
 				/>
 			) : (
 				<p>Loading...</p>
@@ -56,4 +57,4 @@ const SecondPage = () => {
 	);
 };
 
-export default SecondPage;
+export default ForthPage;

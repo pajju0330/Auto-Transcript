@@ -10,6 +10,9 @@ import FirstPage from './components/FirstPage'
 import AddData from './components/AddData'
 import ShowTranscript from './components/ShowTranscript'
 import SecondPage from './components/SecondPage'
+import ThirdPage from './components/ThirdPage'
+import ForthPage from './components/ForthPage'
+import FifthPage from './components/FifthPage'
 
 
 const App = () => {
@@ -25,6 +28,9 @@ const App = () => {
         <Route exact path='/admin/login' element={<Login />} />
         <Route exact path='/admin/transcript/firstpage/:id' element={<FirstPage />} />
         <Route exact path='/admin/transcript/secondpage/:id' element={<SecondPage />} />
+        <Route exact path='/admin/transcript/thirdpage/:id' element={<ThirdPage />} />
+        <Route exact path='/admin/transcript/forthpage/:id' element={<ForthPage />} />
+        <Route exact path='/admin/transcript/fifthpage/:id' element={<FifthPage />} />
         <Route exact path='/admin/transcript/final/:id' element={<ShowTranscript />} />
         <Route exact path='/admin/home/adddata' element={<AddData/>} />
         <Route exact path='/form' element={<Checkout />} />

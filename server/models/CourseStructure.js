@@ -19,7 +19,10 @@ const courseStructureSchema = new mongoose.Schema({
     Credits:{
         type:String
     },
-    grade:{
+    Grade:{
+        type:String
+    },
+    Semester:{  
         type:String
     },
     Year:{
