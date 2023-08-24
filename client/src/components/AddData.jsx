@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Appbar from "./Utils/Appbar";
 import FileUploadIcon from "@mui/icons-material/FileUpload";
 import * as XLSX from 'xlsx/xlsx.mjs';
@@ -27,7 +27,17 @@ const AddData = () => {
 			console.error('Error converting Excel to JSON:', error);
 		  }
 		}
-	  };
+	};
+
+	const setStatusFunction = async() =>{
+		const res = await API.verifyCourse();
+		console.log(res.data);
+		setStatus([...res.data])
+	}
+
+	useEffect(()=>{
+		setStatusFunction();
+	})
 	return (
 		<>
 			<Appbar />
