@@ -22,6 +22,7 @@
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.20",
     "puppeteer": "^19.11.1",
+    "react-to-pdf": "^1.0.1",
     "util": "^0.12.5",
     "xlsx": "^0.18.5"
   }

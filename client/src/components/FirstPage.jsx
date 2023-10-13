@@ -5,7 +5,6 @@ import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import { useParams } from "react-router-dom";
 import * as API from "../API/FormRequest";
 import { useNavigate } from "react-router-dom";
-
 function FirstPage({ language, result, marks }) {
 	const navigate = useNavigate();
 	const { id } = useParams();

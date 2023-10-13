@@ -44,6 +44,14 @@ const AddData = () => {
 			<div className='mainDiv'>
 				<div className='home'>
 					<div className='home-container'>
+						<select name="" id="" style={{height:'2rem', margin:'1rem', border:'1px solid #555'}}>Branch
+						<option value="IT">Information Technology</option>
+						<option value="CSE">Computer Science and Engineering</option>
+						<option value="ELE">Electronics Engineering</option>
+						<option value="ELT">Electrical Engineering</option>
+						<option value="CV">Civil Engineering</option>
+						<option value="MC">Mechanical Engineering</option>
+						</select>
 						<div className='home-content-heading'>
 							<div className='subtitle sub-one'>Sr. No.</div>
 							<div className='subtitle sub-one'>Year</div>
